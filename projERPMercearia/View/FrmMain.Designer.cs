@@ -77,16 +77,16 @@ namespace projERPMercearia.View
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(800, 450);
+            this.pnlMain.Size = new System.Drawing.Size(1058, 576);
             this.pnlMain.TabIndex = 0;
             // 
             // pnlContent
             // 
             this.pnlContent.Controls.Add(this.splitter3);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(250, 0);
+            this.pnlContent.Location = new System.Drawing.Point(320, 0);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(550, 446);
+            this.pnlContent.Size = new System.Drawing.Size(738, 572);
             this.pnlContent.TabIndex = 0;
             // 
             // splitter3
@@ -94,7 +94,7 @@ namespace projERPMercearia.View
             this.splitter3.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter3.Location = new System.Drawing.Point(0, 0);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(550, 4);
+            this.splitter3.Size = new System.Drawing.Size(738, 4);
             this.splitter3.TabIndex = 0;
             this.splitter3.TabStop = false;
             // 
@@ -105,7 +105,7 @@ namespace projERPMercearia.View
             this.pnlLeftMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeftMenuBar.Location = new System.Drawing.Point(0, 0);
             this.pnlLeftMenuBar.Name = "pnlLeftMenuBar";
-            this.pnlLeftMenuBar.Size = new System.Drawing.Size(250, 446);
+            this.pnlLeftMenuBar.Size = new System.Drawing.Size(320, 572);
             this.pnlLeftMenuBar.TabIndex = 1;
             // 
             // trvOptions
@@ -113,6 +113,7 @@ namespace projERPMercearia.View
             this.trvOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.trvOptions.Cursor = System.Windows.Forms.Cursors.Default;
+            this.trvOptions.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.trvOptions.Location = new System.Drawing.Point(12, 12);
             this.trvOptions.Name = "trvOptions";
             treeNode1.Name = "nodAddProducts";
@@ -149,7 +150,7 @@ namespace projERPMercearia.View
             treeNode8,
             treeNode11,
             treeNode15});
-            this.trvOptions.Size = new System.Drawing.Size(234, 426);
+            this.trvOptions.Size = new System.Drawing.Size(298, 552);
             this.trvOptions.TabIndex = 0;
             this.trvOptions.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.OnSelectedOptionList);
             this.trvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.AfterSelectedOptionList);
@@ -158,16 +159,16 @@ namespace projERPMercearia.View
             // 
             this.splitter2.Location = new System.Drawing.Point(0, 0);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(4, 446);
+            this.splitter2.Size = new System.Drawing.Size(4, 572);
             this.splitter2.TabIndex = 0;
             this.splitter2.TabStop = false;
             // 
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 446);
+            this.splitter1.Location = new System.Drawing.Point(0, 572);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(800, 4);
+            this.splitter1.Size = new System.Drawing.Size(1058, 4);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -175,7 +176,7 @@ namespace projERPMercearia.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1058, 576);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";

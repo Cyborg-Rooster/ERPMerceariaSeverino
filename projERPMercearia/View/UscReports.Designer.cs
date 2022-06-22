@@ -57,8 +57,6 @@ namespace projERPMercearia.View
             // 
             // dtpSince
             // 
-            this.dtpSince.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpSince.Location = new System.Drawing.Point(52, 109);
             this.dtpSince.Name = "dtpSince";
             this.dtpSince.Size = new System.Drawing.Size(195, 27);
@@ -84,8 +82,6 @@ namespace projERPMercearia.View
             // 
             // dtpUntil
             // 
-            this.dtpUntil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpUntil.Location = new System.Drawing.Point(290, 109);
             this.dtpUntil.Name = "dtpUntil";
             this.dtpUntil.Size = new System.Drawing.Size(195, 27);
@@ -104,8 +100,6 @@ namespace projERPMercearia.View
             // 
             // cbbSections
             // 
-            this.cbbSections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbSections.Enabled = false;
             this.cbbSections.FormattingEnabled = true;
             this.cbbSections.Location = new System.Drawing.Point(290, 148);
@@ -150,12 +144,12 @@ namespace projERPMercearia.View
             this.clnClientsNumber.Name = "clnClientsNumber";
             this.clnClientsNumber.ReadOnly = true;
             // 
-            // clmGross
+            // clnGross
             // 
             this.clnGross.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clnGross.HeaderText = "Valor Bruto";
             this.clnGross.MinimumWidth = 6;
-            this.clnGross.Name = "clmGross";
+            this.clnGross.Name = "clnGross";
             this.clnGross.ReadOnly = true;
             // 
             // clnNet

@@ -20,7 +20,7 @@ namespace projERPMercearia
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DatabaseController.InitiateDatabase();
-
+            BackupController.CheckForBackups();
             //SQLiteHelper.RunQuery("delete from SECTION_PROFITS");
             //SQLiteHelper.RunQuery("drop table SECTION_PROFITS");
             //SQLiteHelper.RunQuery("DROP TABLE PDV_INFO");

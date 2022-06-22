@@ -249,7 +249,7 @@ namespace projERPMercearia.View
             this.gbxCaption.Controls.Add(this.F3);
             this.gbxCaption.Controls.Add(this.F2);
             this.gbxCaption.Controls.Add(this.F1);
-            this.gbxCaption.Location = new System.Drawing.Point(46, 372);
+            this.gbxCaption.Location = new System.Drawing.Point(46, 347);
             this.gbxCaption.Name = "gbxCaption";
             this.gbxCaption.Size = new System.Drawing.Size(655, 641);
             this.gbxCaption.TabIndex = 3;
@@ -428,11 +428,9 @@ namespace projERPMercearia.View
             this.Controls.Add(this.gbxCaption);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.gbxPDV);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "FrmPDV";
             this.Text = "frmPDV";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gbxPDV.ResumeLayout(false);
             this.gbxPDV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShoppingCart)).EndInit();

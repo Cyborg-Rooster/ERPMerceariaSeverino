@@ -15,11 +15,14 @@ namespace projERPMercearia.Controller
         {
             if (SQLiteHelper.CheckIfDatabaseExist()) SQLiteHelper.SetDatabase();
             else SQLiteHelper.CreateDatabase();
+
+            DatabaseSynch.Synch();
         }
 
         public static void Add(string table, string columns, string values)
         {
-            SQLiteHelper.RunQuery(CommonQuery.Add(table, columns, values));
+            string teste = CommonQuery.Add(table, columns, values);
+            SQLiteHelper.RunQuery(teste);
         }
 
         public static void Update(string table, string changes, string where)
@@ -43,6 +46,11 @@ namespace projERPMercearia.Controller
         public static int SelectCount(string table, string column)
         {
             return Convert.ToInt32(SQLiteHelper.ReturnValue(CommonQuery.SelectCount(table)));
+        }
+
+        public static int SelectCount(string table, string column, string where)
+        {
+            return Convert.ToInt32(SQLiteHelper.ReturnValue(CommonQuery.Select(column, table, where)));
         }
 
         public static bool CheckIfExist(string table, string column, string where)

@@ -33,18 +33,20 @@ namespace projERPMercearia.View
             this.cbbSections = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvReport = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbbProducts = new System.Windows.Forms.ComboBox();
             this.clmSector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGross = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbbProducts = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.Location = new System.Drawing.Point(52, 33);
@@ -55,8 +57,6 @@ namespace projERPMercearia.View
             // 
             // cbbSections
             // 
-            this.cbbSections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbSections.FormattingEnabled = true;
             this.cbbSections.Items.AddRange(new object[] {
             "TODOS OS SETORES"});
@@ -68,6 +68,8 @@ namespace projERPMercearia.View
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(52, 84);
             this.label1.Name = "label1";
@@ -94,39 +96,6 @@ namespace projERPMercearia.View
             this.dgvReport.RowTemplate.Height = 29;
             this.dgvReport.Size = new System.Drawing.Size(435, 254);
             this.dgvReport.TabIndex = 22;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(391, 400);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 29);
-            this.btnSearch.TabIndex = 23;
-            this.btnSearch.Text = "Procurar";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.OnBtnSearchClicked);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(274, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Produto:";
-            // 
-            // cbbProducts
-            // 
-            this.cbbProducts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbProducts.Enabled = false;
-            this.cbbProducts.FormattingEnabled = true;
-            this.cbbProducts.Items.AddRange(new object[] {
-            "TODOS OS PRODUTOS"});
-            this.cbbProducts.Location = new System.Drawing.Point(345, 81);
-            this.cbbProducts.Name = "cbbProducts";
-            this.cbbProducts.Size = new System.Drawing.Size(142, 28);
-            this.cbbProducts.TabIndex = 24;
             // 
             // clmSector
             // 
@@ -155,6 +124,37 @@ namespace projERPMercearia.View
             this.clmGross.HeaderText = "Valor Bruto";
             this.clmGross.MinimumWidth = 6;
             this.clmGross.Name = "clmGross";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(391, 400);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(94, 29);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.Text = "Procurar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.OnBtnSearchClicked);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(274, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Produto:";
+            // 
+            // cbbProducts
+            // 
+            this.cbbProducts.Enabled = false;
+            this.cbbProducts.FormattingEnabled = true;
+            this.cbbProducts.Items.AddRange(new object[] {
+            "TODOS OS PRODUTOS"});
+            this.cbbProducts.Location = new System.Drawing.Point(345, 81);
+            this.cbbProducts.Name = "cbbProducts";
+            this.cbbProducts.Size = new System.Drawing.Size(142, 28);
+            this.cbbProducts.TabIndex = 24;
             // 
             // UscSectorReports
             // 

@@ -25,9 +25,6 @@ namespace projERPMercearia.Controller
             Directory.CreateDirectory(@$"{AppDomain.CurrentDomain.BaseDirectory}\Database\");
             SQLiteConnection.CreateFile(@$"{AppDomain.CurrentDomain.BaseDirectory}\Database\Database.sqlite");
             SetDatabase();
-
-
-            DatabaseSynch.Synch();
         }
 
         public static void SetDatabase()
@@ -43,7 +40,6 @@ namespace projERPMercearia.Controller
             cmd.ExecuteNonQuery();
         }
 
-
         public static string[] GetAllValuesFromTableByArray(string query, string columnToRead)
         {
             List<string> output = new List<string>();
@@ -54,7 +50,10 @@ namespace projERPMercearia.Controller
             while(reader.Read())
             {
                 if (!reader.IsDBNull(0))
-                    output.Add(Convert.ToString(reader[columnToRead]));
+                {
+                    if(columnToRead == "*") for(int i = 0; i < 5; i++) output.Add(Convert.ToString(reader[i]));
+                    else output.Add(Convert.ToString(reader[columnToRead]));
+                }
                 else output.Add("0");
             };
 

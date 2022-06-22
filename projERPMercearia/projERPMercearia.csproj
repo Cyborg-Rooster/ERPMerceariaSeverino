@@ -8,6 +8,7 @@
     <Authors>Enrique Rodrigues</Authors>
     <Company>Cyborg Rooster</Company>
     <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\label.png" />
+    <EmbeddedResource Include="Images\label.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images\logo.png" />
   </ItemGroup>
 

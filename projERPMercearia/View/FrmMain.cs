@@ -15,7 +15,8 @@ namespace projERPMercearia.View
     public partial class FrmMain : Form
     {
         string title = "ERP Mercearia Severino : ";
-        FrmPDV frmPDV;
+        //FrmPDV frmPDV;
+        FrmPontoDeVenda frmPontoDeVenda;
         public FrmMain()
         {
             InitializeComponent();
@@ -100,8 +101,10 @@ namespace projERPMercearia.View
                     if (open == DialogResult.Yes)
                     {
                         Configuration.PDVopen = true;
-                        frmPDV = new FrmPDV(this);
-                        frmPDV.Show();
+                        /*frmPDV = new FrmPDV(this);
+                        frmPDV.Show();*/
+                        frmPontoDeVenda = new FrmPontoDeVenda(this);
+                        frmPontoDeVenda.Show();
                         this.WindowState = FormWindowState.Minimized;
                     }
                 }
@@ -114,14 +117,14 @@ namespace projERPMercearia.View
                     (
                         "SECTION_PROFITS",
                         "SUM(GROSS_VALUE)",
-                        $"PDV_ID = {frmPDV.PDVId}"
+                        $"PDV_ID = {frmPontoDeVenda.PDVId}"
                     );
 
                     string netStringValue = DatabaseController.Select
                     (
                         "SECTION_PROFITS",
                         "SUM(NET_VALUE)",
-                        $"PDV_ID = {frmPDV.PDVId}"
+                        $"PDV_ID = {frmPontoDeVenda.PDVId}"
                     );
 
                     if (!DoubleFormatter.TryParse(grossStringValue, out double grossValue))
@@ -134,14 +137,16 @@ namespace projERPMercearia.View
                     (
                         "PDV_INFO",
                         "ID, PDV_DATE, CLIENTS_NUMB, GROSS_VALUE, NET_VALUE",
-                        $"{frmPDV.PDVId}," +
+                        $"{frmPontoDeVenda.PDVId}," +
                         $"{CommonQuery.ReturnDateFormat(DateTime.Now)}, " +
-                        $"{frmPDV.ClientsNumber}, " +
+                        $"{frmPontoDeVenda.ClientsNumber}, " +
                         $"{DoubleFormatter.ConvertDoubleToString(grossValue)}," +
                         $"{DoubleFormatter.ConvertDoubleToString(netValue)}"
                     );
 
-                    frmPDV.Close();
+                    frmPontoDeVenda.FormClosing -= new FormClosingEventHandler(frmPontoDeVenda.OnFormTryClose);
+                    frmPontoDeVenda.Close();
+
                     Configuration.PDVopen = false;
                 }
             }

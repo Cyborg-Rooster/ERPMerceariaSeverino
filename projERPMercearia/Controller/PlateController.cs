@@ -108,7 +108,7 @@ namespace projERPMercearia.Controller
             PdfFont font = PdfFontFactory.CreateFont(iText.IO.Font.Constants.StandardFonts.TIMES_BOLD);
             Document.SetFont(font);
 
-            var label = @$"{AppDomain.CurrentDomain.BaseDirectory}\Resources\label.png";
+            var label = @$"{AppDomain.CurrentDomain.BaseDirectory}\Images\label.png";
 
 
             while (products.Count > 0)

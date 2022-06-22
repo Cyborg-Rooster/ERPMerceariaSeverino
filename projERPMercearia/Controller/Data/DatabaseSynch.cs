@@ -11,8 +11,8 @@ namespace projERPMercearia.Controller
     {
         public static readonly int Version = 1;
         public static void Synch()
-        {
-            CreateTables();
+        { 
+            if(DatabaseController.SelectCount("SQLITE_MASTER", "COUNT(NAME)") == 0) CreateTables();
             SetDatabaseVersion();
         }
 

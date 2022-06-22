@@ -14,6 +14,9 @@ namespace projERPMercearia.View
 {
     public partial class UscSectorReports : UserControl
     {
+        double Profit, Price;
+        List<Product> products;
+
         public UscSectorReports()
         {
             InitializeComponent();
@@ -43,8 +46,6 @@ namespace projERPMercearia.View
 
         private void OnBtnSearchClicked(object sender, EventArgs e)
         {
-            List<Product> products;
-
             dgvReport.Rows.Clear();
 
             if (cbbSections.Text == string.Empty) cbbSections.SelectedItem = cbbSections.Items[0];
@@ -52,47 +53,10 @@ namespace projERPMercearia.View
 
             if (cbbSections.SelectedIndex != 0)
             {
-                
-                if (cbbProducts.SelectedIndex == 0) 
-                { 
-                    products = DatabaseController.SelectProductsListBySector($"PRODUCT.ID_SECTION = {cbbSections.SelectedIndex}");
-                    for(int i = 0; i < products.Count; i++)
-                    {
-                        dgvReport.Rows.Add(new object[]
-                        {
-                            products[i].Name,
-                            products[i].Quantity,
-                            $"R${products[i].Profit * products[i].Quantity:N2}",
-                            $"R${products[i].Price * products[i].Quantity:N2}"
-                        });
-                    }
-                }
-                else 
-                {
-                    products = DatabaseController.SelectProductsListBySector($"PRODUCT.ID_SECTION = {cbbSections.SelectedIndex} AND PRODUCT.NAME = '{cbbProducts.Text}'");
-                    dgvReport.Rows.Add(new object[]
-                    {
-                        products[0].Name,
-                        products[0].Quantity,
-                        $"R${products[0].Profit * products[0].Quantity:N2}",
-                        $"R${products[0].Price * products[0].Quantity:N2}"
-                    });
-                }
+                if (cbbProducts.SelectedIndex == 0) FilterByProduct();
+                else FilterProductBySector();
             }
-            else 
-            { 
-                products = DatabaseController.SelectProductsListBySector("PRODUCT.ID_SECTION = PRODUCT.ID_SECTION");
-                for (int i = 0; i < products.Count; i++)
-                {
-                    dgvReport.Rows.Add(new object[]
-                    {
-                        products[i].Name,
-                        products[i].Quantity,
-                        $"R${products[i].Profit * products[i].Quantity:N2}",
-                        $"R${products[i].Price * products[i].Quantity:N2}"
-                    });
-                }
-            }
+            else FilterBySector();
         }
 
         private void OnCbbSectionsSelectIndexChanged(object sender, EventArgs e)
@@ -103,6 +67,83 @@ namespace projERPMercearia.View
                 cbbProducts.Enabled = true;
                 cbbProducts.Text = string.Empty;
                 PopulateComboBox("NAME", "PRODUCT", $"ID_SECTION = {cbbSections.SelectedIndex}", cbbProducts); 
+            }
+        }
+
+        private void FilterByProduct()
+        {
+            products = DatabaseController.SelectProductsListBySector($"PRODUCT.ID_SECTION = {cbbSections.SelectedIndex}");
+
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].Quantity > 0)
+                {
+                    Profit = products[i].Profit * products[i].Quantity;
+                    Price = products[i].Price * products[i].Quantity;
+                }
+                else
+                {
+                    Profit = 0;
+                    Price = 0;
+                }
+
+                dgvReport.Rows.Add(new object[]
+                {
+                    products[i].Name,
+                    products[i].Quantity,
+                    $"R${Profit:N2}",
+                    $"R${Price:N2}"
+                });
+            }
+        }
+
+        private void FilterProductBySector()
+        {
+            products = DatabaseController.SelectProductsListBySector($"PRODUCT.ID_SECTION = {cbbSections.SelectedIndex} AND PRODUCT.NAME = '{cbbProducts.Text}'");
+
+            if (products[0].Quantity > 0)
+            {
+                Profit = products[0].Profit * products[0].Quantity;
+                Price = products[0].Price * products[0].Quantity;
+            }
+            else
+            {
+                Profit = 0;
+                Price = 0;
+            }
+
+            dgvReport.Rows.Add(new object[]
+            {
+                products[0].Name,
+                products[0].Quantity,
+                $"R${Profit:N2}",
+                $"R${Price:N2}"
+            });
+        }
+
+        private void FilterBySector()
+        {
+            products = DatabaseController.SelectProductsListBySector("PRODUCT.ID_SECTION = PRODUCT.ID_SECTION");
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].Quantity > 0)
+                {
+                    Profit = products[i].Profit * products[i].Quantity;
+                    Price = products[i].Price * products[i].Quantity;
+                }
+                else
+                {
+                    Profit = 0;
+                    Price = 0;
+                }
+
+                dgvReport.Rows.Add(new object[]
+                {
+                    products[i].Name,
+                    products[i].Quantity,
+                    $"R${Profit:N2}",
+                    $"R${Price:N2}"
+                });
             }
         }
     }
